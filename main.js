@@ -1,9 +1,14 @@
+let img;
+
 function setup() {
-  createCanvas(750, 500);
+  createCanvas(1000, 750);
 }
 
 function draw() {
-  background("orange");
+  background("lightblue");
+  image(img, 0, 0, 100, 100);
 }
 
-function preload() {}
+function preload() {
+  img = loadImage("./images/cat.png");
+}
