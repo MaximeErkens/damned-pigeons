@@ -1,14 +1,14 @@
-let img;
+const game = new Game();
 
 function setup() {
-  createCanvas(1000, 750);
+  createCanvas(750, 500);
 }
 
 function draw() {
   background("lightblue");
-  image(img, 0, 0, 100, 100);
+  game.play();
 }
 
 function preload() {
-  img = loadImage("./images/cat.png");
+  game.preload();
 }
