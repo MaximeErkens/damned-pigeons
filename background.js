@@ -8,6 +8,6 @@ class Background {
   }
 
   drawBackground() {
-    this.img(this.img);
+    image(this.img, 0, 0, 800, 600);
   }
 }

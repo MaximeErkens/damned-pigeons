@@ -7,12 +7,12 @@ class Obstacle {
     this.speed = random(1, 5);
   }
 
-  //   preload() {
-  //     this.img = loadImage("./images/pigeon.png");
-  //   }
+  // preload() {
+  //   this.img = loadImage("./images/pigeon.png");
+  // }
 
   drawObstacle() {
-    // image(this.img, this.left, this.top, 50, 50);
+    //image(preload(), this.left, this.top, this.height, this.width);
     rect(this.left, this.top, this.width, this.height);
 
     this.left -= this.speed;

@@ -1,7 +1,7 @@
 const game = new Game();
 
 function setup() {
-  createCanvas(750, 500);
+  createCanvas(800, 600);
 }
 
 function draw() {
@@ -11,4 +11,8 @@ function draw() {
 
 function preload() {
   game.preload();
+}
+
+function keyPressed() {
+  game.keyPressed();
 }
