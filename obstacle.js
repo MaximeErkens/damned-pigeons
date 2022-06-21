@@ -12,8 +12,11 @@ class Obstacle {
   // }
 
   drawObstacle() {
-    //image(preload(), this.left, this.top, this.height, this.width);
+    //image(this.img, this.left, this.top, this.width, this.height);
     rect(this.left, this.top, this.width, this.height);
+    // loadImage("./images/pigeon.png", (img) => {
+    //   image(img, this.left, this.top, this.width, this.height);
+    // });
 
     this.left -= this.speed;
   }

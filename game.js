@@ -19,7 +19,6 @@ class Game {
     }
 
     this.obstacles = this.obstacles.filter((obstacle) => {
-      //obstacle.preload();
       obstacle.drawObstacle();
 
       return obstacle.left >= -obstacle.width;

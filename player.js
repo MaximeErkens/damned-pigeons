@@ -2,7 +2,7 @@ class Player {
   constructor() {
     this.left = 0;
     this.top = 0;
-    this.width = 150;
+    this.width = 125;
     this.height = 150;
     this.velocity = 0;
     this.floor = 400;
@@ -10,7 +10,7 @@ class Player {
   }
 
   preload() {
-    this.img = loadImage("./images/cat.png");
+    this.img = loadImage("images/kitten.png");
   }
 
   keyPressed() {
