@@ -5,8 +5,8 @@ const ARROW_UP = 38;
 const SPACE_BAR = 32;
 const ENTER_KEY = 13;
 
-const CANVAS_WIDTH = 750;
+const CANVAS_WIDTH = 800;
 const CANVAS_TOP = 0;
-const CANVAS_HEIGHT = 500;
+const CANVAS_HEIGHT = 600;
 
 const GRAVITY = 0.2;

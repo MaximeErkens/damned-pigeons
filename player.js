@@ -36,6 +36,13 @@ class Player {
       this.velocity = 0;
       this.jumpCount = 0;
     }
+
+    if (keyIsDown(SPACE_BAR)) {
+      this.createLaserbeam();
+      this.moveLaserbeamOnEnter();
+    } else {
+      this.begoneLaserbeam();
+    }
   }
 
   hasReachedTheGround() {
@@ -52,10 +59,52 @@ class Player {
   }
 
   moveToTheRight() {
+    if (this.left >= CANVAS_WIDTH - this.width) {
+      return;
+    }
     this.left += 22;
   }
 
   moveToTheLeft() {
+    if (this.left <= 0) {
+      return;
+    }
     this.left -= 22;
+  }
+
+  createLaserbeam() {
+    if (!this.laserbeam) {
+      this.laserbeam = new Laserbeam();
+    }
+  }
+
+  catEyeLocation() {
+    return {
+      top: this.top + 30,
+      left: this.left + 80,
+    };
+  }
+
+  moveLaserbeamOnEnter() {
+    const eyeLocation = this.catEyeLocation();
+    this.laserbeam.followCatEyes(eyeLocation.left, eyeLocation.top);
+
+    const isLaserbeamStillAttachedToCatEyes = true;
+    this.laserbeam.drawLaserbeam(isLaserbeamStillAttachedToCatEyes);
+  }
+
+  tookAntiLaserbeam() {
+    return () => {
+      if (this.laserbeam) {
+        this.laserbeam = null;
+      }
+    };
+  }
+
+  begoneLaserbeam() {
+    if (this.laserbeam) {
+      const noLongerAtCatEyes = false;
+      this.laserbeam.drawLaserbeam(noLongerAtCatEyes, this.tookAntiLaserbeam());
+    }
   }
 }
