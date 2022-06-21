@@ -12,7 +12,7 @@ class Laserbeam {
     }
     this.left = left;
     this.top = top;
-    this.width = +2;
+    this.width += 2;
   }
 
   drawLaserbeam(isStillAttachedToCat, functionFromParent) {
@@ -20,7 +20,8 @@ class Laserbeam {
       this.isAttached = false;
     }
 
-    rect(this.left, this.top, this.width, 50);
+    rect(this.left, this.top, this.width, 5);
+    fill("#39ff14");
 
     if (!this.isAttached) {
       this.left += 2;

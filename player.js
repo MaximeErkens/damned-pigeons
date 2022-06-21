@@ -80,7 +80,7 @@ class Player {
 
   catEyeLocation() {
     return {
-      top: this.top + 30,
+      top: this.top + 35,
       left: this.left + 80,
     };
   }
