@@ -4,7 +4,7 @@ class Background {
   }
 
   preload() {
-    this.img = loadImage("/images/dam_square.jpg");
+    this.img = loadImage("images/dam_square.jpg");
   }
 
   drawBackground() {
