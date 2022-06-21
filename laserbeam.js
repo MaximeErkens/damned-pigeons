@@ -21,7 +21,7 @@ class Laserbeam {
     }
 
     rect(this.left, this.top, this.width, 5);
-    fill("#39ff14");
+    fill("RGBA(121, 254, 12, 0.5)");
 
     if (!this.isAttached) {
       this.left += 2;
