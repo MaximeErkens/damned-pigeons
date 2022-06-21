@@ -17,6 +17,12 @@ class Player {
     if (keyCode === ARROW_UP) {
       this.jump();
     }
+    if (keyCode === ARROW_RIGHT) {
+      this.moveToTheRight();
+    }
+    if (keyCode === ARROW_LEFT) {
+      this.moveToTheLeft();
+    }
   }
 
   drawPlayer() {
@@ -43,5 +49,13 @@ class Player {
     this.top -= 45;
     this.velocity -= 5;
     this.jumpCount++;
+  }
+
+  moveToTheRight() {
+    this.left += 22;
+  }
+
+  moveToTheLeft() {
+    this.left -= 22;
   }
 }
