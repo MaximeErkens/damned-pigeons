@@ -8,6 +8,7 @@ class Game {
   preload() {
     this.player.preload();
     this.background.preload();
+    this.obstacleImage = loadImage("images/pigeon.png");
   }
 
   play() {
@@ -15,7 +16,7 @@ class Game {
     this.player.drawPlayer();
 
     if (frameCount % 75 === 0) {
-      this.obstacles.push(new Obstacle());
+      this.obstacles.push(new Obstacle(this.obstacleImage));
     }
 
     this.obstacles = this.obstacles.filter((obstacle) => {
