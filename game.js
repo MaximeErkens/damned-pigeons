@@ -21,12 +21,53 @@ class Game {
 
     this.obstacles = this.obstacles.filter((obstacle) => {
       obstacle.drawObstacle();
+      if (this.laserDoveCollision(obstacle)) {
+        obstacle.killPigeon();
+      }
 
-      return obstacle.left >= -obstacle.width;
+      return (
+        obstacle.left >= -obstacle.width &&
+        !obstacle.hasBeenCompletelyObliteratedByOurFelineCharacter
+      );
     });
   }
 
   keyPressed() {
     this.player.keyPressed();
   }
+
+  laserDoveCollision(pigeon) {
+    if (!this.player.laserbeam) {
+      return false;
+    }
+
+    const laser = this.player.laserbeam;
+
+    const bottomOfA = laser.top + laser.height;
+    const topOfB = pigeon.top;
+    const isBottomOfABiggerThenTopOfB = bottomOfA > topOfB;
+
+    const topOfA = laser.top;
+    const bottomOfB = pigeon.height + pigeon.top;
+    const isTopOfASmallerThanBottomOfB = topOfA <= bottomOfB;
+
+    const leftOfA = laser.left;
+    const rightOfB = pigeon.left + pigeon.width;
+    const isLeftOfASmallerThanRightOfB = leftOfA <= rightOfB;
+
+    const rightOfA = laser.width + laser.left;
+    const leftOfB = pigeon.left;
+    const isRightOfABiggerThanLeftOfB = rightOfA >= leftOfB;
+
+    return (
+      isBottomOfABiggerThenTopOfB &&
+      isTopOfASmallerThanBottomOfB &&
+      isLeftOfASmallerThanRightOfB &&
+      isRightOfABiggerThanLeftOfB
+    );
+  }
+
+  // isCatAndDoveColliding() {
+
+  // }
 }

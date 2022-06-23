@@ -6,11 +6,16 @@ class Obstacle {
     this.left = CANVAS_WIDTH + 5;
     this.speed = random(1, 5);
     this.img = img;
+    this.hasBeenCompletelyObliteratedByOurFelineCharacter = false;
   }
 
   drawObstacle() {
     image(this.img, this.left, this.top, this.width, this.height);
 
     this.left -= this.speed;
+  }
+
+  killPigeon() {
+    this.hasBeenCompletelyObliteratedByOurFelineCharacter = true;
   }
 }

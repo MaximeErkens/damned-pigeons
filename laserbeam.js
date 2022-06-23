@@ -4,6 +4,7 @@ class Laserbeam {
     this.top = 0;
     this.width = 0;
     this.isAttached = true;
+    this.height = 5;
   }
 
   followCatEyes(left, top) {
@@ -20,7 +21,7 @@ class Laserbeam {
       this.isAttached = false;
     }
 
-    rect(this.left, this.top, this.width, 5);
+    rect(this.left, this.top, this.width, this.height);
     fill("RGBA(121, 254, 12, 0.5)");
 
     if (!this.isAttached) {
