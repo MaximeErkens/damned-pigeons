@@ -8,7 +8,7 @@ class Game {
   preload() {
     this.player.preload();
     this.background.preload();
-    this.obstacleImage = loadImage("images/pigeon.png");
+    this.obstacleImage = loadImage("images/pigeon_small.png");
   }
 
   play() {
@@ -23,6 +23,14 @@ class Game {
       obstacle.drawObstacle();
       if (this.laserDoveCollision(obstacle)) {
         obstacle.killPigeon();
+      }
+
+      if (this.CatDoveCollision(obstacle)) {
+        obstacle.killPigeon();
+        this.player.lives--;
+        if (this.player.lives === 0) {
+          this.noLoop();
+        }
       }
 
       return (
@@ -67,7 +75,31 @@ class Game {
     );
   }
 
-  // isCatAndDoveColliding() {
+  CatDoveCollision(pigeon) {
+    // player = A
+    // obstacle = B
+    const bottomOfA = this.player.top + this.player.height;
+    const topOfB = pigeon.top;
+    const isBottomOfABiggerThenTopOfB = bottomOfA > topOfB;
 
-  // }
+    const topOfA = this.player.top;
+    const bottomOfB = pigeon.height + pigeon.top;
+
+    const isTopOfASmallerThanBottomOfB = topOfA <= bottomOfB;
+
+    const leftOfA = this.player.left;
+    const rightOfB = pigeon.left + pigeon.width;
+    const isLeftOfASmallerThanRightOfB = leftOfA <= rightOfB;
+
+    const rightOfA = this.player.width + this.player.left;
+    const leftOfB = pigeon.left;
+    const isRightOfABiggerThanLeftOfB = rightOfA >= leftOfB;
+
+    return (
+      isBottomOfABiggerThenTopOfB &&
+      isTopOfASmallerThanBottomOfB &&
+      isLeftOfASmallerThanRightOfB &&
+      isRightOfABiggerThanLeftOfB
+    );
+  }
 }

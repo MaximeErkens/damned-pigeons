@@ -1,7 +1,7 @@
 class Obstacle {
   constructor(img) {
-    this.height = 150;
-    this.width = 150;
+    this.height = 75;
+    this.width = 75;
     this.top = random(150, 500 - this.height - 5);
     this.left = CANVAS_WIDTH + 5;
     this.speed = random(1, 5);
@@ -11,7 +11,8 @@ class Obstacle {
 
   drawObstacle() {
     image(this.img, this.left, this.top, this.width, this.height);
-
+    fill(255, 50);
+    rect(this.left, this.top, this.width, this.height);
     this.left -= this.speed;
   }
 

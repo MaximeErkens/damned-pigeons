@@ -7,6 +7,7 @@ class Player {
     this.velocity = 0;
     this.floor = 400;
     this.jumpCount = 0;
+    this.lives = 9;
   }
 
   preload() {
@@ -30,6 +31,8 @@ class Player {
     this.top += this.velocity;
 
     image(this.img, this.left, this.top, this.width, this.height);
+    fill(255, 50);
+    rect(this.left, this.top, this.width, this.height);
 
     if (this.hasReachedTheGround()) {
       this.top = this.floor;
