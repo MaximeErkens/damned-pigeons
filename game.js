@@ -3,6 +3,7 @@ class Game {
     this.player = new Player();
     this.obstacles = [];
     this.background = new Background();
+    this.score = 0;
   }
 
   preload() {
@@ -23,16 +24,21 @@ class Game {
       obstacle.drawObstacle();
       if (this.laserDoveCollision(obstacle)) {
         obstacle.killPigeon();
+        this.score++;
       }
+
+      scoreSpan.innerText = " " + this.score + " points      ";
 
       if (this.CatDoveCollision(obstacle)) {
         this.player.makeCatHalfOpaqueOnCollision();
         obstacle.killPigeon();
         this.player.lives--;
-        if (this.player.lives === 0) {
+        if (this.player.lives <= -1) {
           this.noLoop();
         }
       }
+
+      livesSpan.innerText = " " + this.player.lives;
 
       return (
         obstacle.left >= -obstacle.width &&

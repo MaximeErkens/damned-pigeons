@@ -10,3 +10,6 @@ const CANVAS_TOP = 0;
 const CANVAS_HEIGHT = 600;
 
 const GRAVITY = 0.2;
+
+const livesSpan = document.getElementById("lives");
+const scoreSpan = document.getElementById("score");
