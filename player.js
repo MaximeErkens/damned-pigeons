@@ -14,6 +14,15 @@ class Player {
     this.img = loadImage("images/kitten.png");
   }
 
+  makeCatHalfOpaqueOnCollision() {
+    push();
+    // image(img, this.left, this.top, this.width, this.height);
+    tint(255, 0, 0, 126);
+    image(this.img, this.left, this.top, this.width, this.height);
+    //noTint();
+    pop();
+  }
+
   keyPressed() {
     if (keyCode === ARROW_UP) {
       this.jump();
@@ -31,8 +40,8 @@ class Player {
     this.top += this.velocity;
 
     image(this.img, this.left, this.top, this.width, this.height);
-    fill(255, 50);
-    rect(this.left, this.top, this.width, this.height);
+    //fill(255, 50);
+    //rect(this.left, this.top, this.width, this.height);
 
     if (this.hasReachedTheGround()) {
       this.top = this.floor;

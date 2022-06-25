@@ -11,8 +11,8 @@ class Obstacle {
 
   drawObstacle() {
     image(this.img, this.left, this.top, this.width, this.height);
-    fill(255, 50);
-    rect(this.left, this.top, this.width, this.height);
+    //fill(255, 50);
+    //rect(this.left, this.top, this.width, this.height);
     this.left -= this.speed;
   }
 

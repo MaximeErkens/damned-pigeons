@@ -26,6 +26,7 @@ class Game {
       }
 
       if (this.CatDoveCollision(obstacle)) {
+        this.player.makeCatHalfOpaqueOnCollision();
         obstacle.killPigeon();
         this.player.lives--;
         if (this.player.lives === 0) {
