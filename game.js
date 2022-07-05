@@ -10,6 +10,7 @@ class Game {
     this.player.preload();
     this.background.preload();
     this.obstacleImage = loadImage("images/pigeon_small.png");
+    backgroundMusicLevel = loadSound("sound/duifopdam.mp3");
   }
 
   play() {

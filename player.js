@@ -16,10 +16,8 @@ class Player {
 
   makeCatHalfOpaqueOnCollision() {
     push();
-    // image(img, this.left, this.top, this.width, this.height);
     tint(255, 0, 0, 126);
     image(this.img, this.left, this.top, this.width, this.height);
-    //noTint();
     pop();
   }
 

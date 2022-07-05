@@ -13,3 +13,5 @@ const GRAVITY = 0.2;
 
 const livesSpan = document.getElementById("lives");
 const scoreSpan = document.getElementById("score");
+
+let backgroundMusicLevel;
