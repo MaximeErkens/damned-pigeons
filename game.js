@@ -11,6 +11,8 @@ class Game {
     this.background.preload();
     this.obstacleImage = loadImage("images/pigeon_small.png");
     backgroundMusicLevel = loadSound("sound/duifopdam.mp3");
+    laserSound = loadSound("sound/laser.mp3");
+    pigeonVictorySong = loadSound("sound/pigeonVictory.mp3");
   }
 
   play() {
@@ -35,6 +37,9 @@ class Game {
         obstacle.killPigeon();
         this.player.lives--;
         if (this.player.lives <= -1) {
+          backgroundMusicLevel.stop();
+          pigeonVictorySong.play();
+          pigeonVictorySong.setVolume(0.1);
           this.noLoop();
         }
       }

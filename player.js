@@ -85,6 +85,8 @@ class Player {
   createLaserbeam() {
     if (!this.laserbeam) {
       this.laserbeam = new Laserbeam();
+      laserSound.play();
+      laserSound.setVolume(0.2);
     }
   }
 

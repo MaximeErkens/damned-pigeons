@@ -15,3 +15,5 @@ const livesSpan = document.getElementById("lives");
 const scoreSpan = document.getElementById("score");
 
 let backgroundMusicLevel;
+let laserSound;
+let pigeonVictorySong;
