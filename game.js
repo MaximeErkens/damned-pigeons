@@ -15,6 +15,7 @@ class Game {
     catHitSound = loadSound("sound/catHit.mp3");
     pigeonHitSound = loadSound("sound/pigeonHit.mp3");
     pigeonVictorySong = loadSound("sound/pigeonVictory2.mp3");
+    catJumpSound = loadSound("sound/catJump.mp3");
   }
 
   play() {

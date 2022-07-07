@@ -19,3 +19,4 @@ let laserSound;
 let pigeonVictorySong;
 let catHitSound;
 let pigeonHitSound;
+let catJumpSound;

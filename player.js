@@ -63,6 +63,8 @@ class Player {
     if (this.jumpCount === 2) {
       return;
     }
+    catJumpSound.play();
+    catJumpSound.setVolume(0.2);
     this.top -= 45;
     this.velocity -= 5;
     this.jumpCount++;
