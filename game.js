@@ -12,6 +12,8 @@ class Game {
     this.obstacleImage = loadImage("images/pigeon_small.png");
     backgroundMusicLevel = loadSound("sound/duifopdam2.mp3");
     laserSound = loadSound("sound/laser.mp3");
+    catHitSound = loadSound("sound/catHit.mp3");
+    pigeonHitSound = loadSound("sound/pigeonHit.mp3");
     pigeonVictorySong = loadSound("sound/pigeonVictory2.mp3");
   }
 
@@ -26,6 +28,8 @@ class Game {
     this.obstacles = this.obstacles.filter((obstacle) => {
       obstacle.drawObstacle();
       if (this.laserDoveCollision(obstacle)) {
+        pigeonHitSound.play();
+        pigeonHitSound.setVolume(0.2);
         obstacle.killPigeon();
         this.score++;
       }
@@ -39,6 +43,7 @@ class Game {
         if (this.player.lives <= -1) {
           backgroundMusicLevel.stop();
           pigeonVictorySong.play();
+          pigeonVictorySong.loop();
           pigeonVictorySong.setVolume(0.1);
           this.noLoop();
         }

@@ -17,3 +17,5 @@ const scoreSpan = document.getElementById("score");
 let backgroundMusicLevel;
 let laserSound;
 let pigeonVictorySong;
+let catHitSound;
+let pigeonHitSound;
