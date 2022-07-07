@@ -30,7 +30,7 @@ class Game {
       obstacle.drawObstacle();
       if (this.laserDoveCollision(obstacle)) {
         pigeonHitSound.play();
-        pigeonHitSound.setVolume(0.2);
+        pigeonHitSound.setVolume(0.6);
         obstacle.killPigeon();
         this.score++;
       }
@@ -41,7 +41,7 @@ class Game {
         this.player.makeCatHalfOpaqueOnCollision();
         obstacle.killPigeon();
         catHitSound.play();
-        catHitSound.setVolume(0.2);
+        catHitSound.setVolume(0.6);
         this.player.lives--;
         if (this.player.lives <= -1) {
           backgroundMusicLevel.stop();

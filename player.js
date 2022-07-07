@@ -64,7 +64,7 @@ class Player {
       return;
     }
     catJumpSound.play();
-    catJumpSound.setVolume(0.2);
+    catJumpSound.setVolume(0.6);
     this.top -= 45;
     this.velocity -= 5;
     this.jumpCount++;
@@ -88,7 +88,7 @@ class Player {
     if (!this.laserbeam) {
       this.laserbeam = new Laserbeam();
       laserSound.play();
-      laserSound.setVolume(0.2);
+      laserSound.setVolume(0.6);
     }
   }
 
