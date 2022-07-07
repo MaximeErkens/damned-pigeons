@@ -12,7 +12,7 @@ class Game {
     this.obstacleImage = loadImage("images/pigeon_small.png");
     backgroundMusicLevel = loadSound("sound/duifopdam2.mp3");
     laserSound = loadSound("sound/laser.mp3");
-    pigeonVictorySong = loadSound("sound/pigeonVictory.mp3");
+    pigeonVictorySong = loadSound("sound/pigeonVictory2.mp3");
   }
 
   play() {
