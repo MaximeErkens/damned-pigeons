@@ -39,6 +39,8 @@ class Game {
       if (this.CatDoveCollision(obstacle)) {
         this.player.makeCatHalfOpaqueOnCollision();
         obstacle.killPigeon();
+        catHitSound.play();
+        catHitSound.setVolume(0.2);
         this.player.lives--;
         if (this.player.lives <= -1) {
           backgroundMusicLevel.stop();
